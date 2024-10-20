@@ -1,0 +1,12 @@
+# Virtual environment
+venv/
+.env/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+todo.txt
+db.sqlite3

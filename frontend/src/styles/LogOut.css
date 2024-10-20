@@ -1,0 +1,13 @@
+.logout-button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #f56565; /* Tailwind CSS equivalent: bg-red-500 */
+    border: none;
+    border-radius: 0.25rem; /* Tailwind CSS equivalent: rounded */
+    cursor: pointer;
+  }
+
+  .logout-button:hover {
+    background-color: #e53e3e; /* Tailwind CSS equivalent: hover:bg-red-600 */
+  }

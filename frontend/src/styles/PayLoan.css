@@ -1,0 +1,52 @@
+.pay-loan {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 1rem;
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.5rem; /* rounded-lg */
+    background-color: #ffffff; /* bg-white */
+  }
+
+  .pay-loan h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: #111827; /* text-gray-900 */
+  }
+
+  .pay-loan form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .pay-loan label {
+    margin-bottom: 0.5rem;
+    font-weight: 600; /* font-semibold */
+    color: #374151; /* text-gray-700 */
+  }
+
+  .pay-loan input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db; /* border-gray-300 */
+    border-radius: 0.25rem; /* rounded */
+  }
+
+  .pay-loan button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #3b82f6; /* bg-blue-500 */
+    border: none;
+    border-radius: 0.25rem; /* rounded */
+    cursor: pointer;
+  }
+
+  .pay-loan button:hover {
+    background-color: #2563eb; /* hover:bg-blue-600 */
+  }
+
+  .pay-loan p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: #10b981; /* text-green-500 */
+  }
