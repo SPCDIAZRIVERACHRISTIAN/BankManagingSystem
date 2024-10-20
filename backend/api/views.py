@@ -27,6 +27,18 @@ class CreateUserView(generics.CreateAPIView):
         else:
             print(serializer.errors)
 
+class UserDetailView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def get(self, request, *args, **kwargs):
+        user = request.user
+        data = {
+            "username": user.username,
+            "first_name": user.first_name,
+            "last_name": user.last_name
+        }
+        return Response(data)
+
 class LoanListCreateView(generics.ListCreateAPIView):
     serializer_class = LoanSerializer
     permission_classes = [IsAuthenticated]

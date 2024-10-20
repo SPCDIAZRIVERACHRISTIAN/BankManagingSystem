@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
-import logo from "../images/logo.png"
+// import logo from "../images/logo.png"
 import Hamburger from "./Hamburger";
-import LogoutButton from "./LogoutButton";
+import LogoutButton from "./LogOut";
 import '../styles/Navigation.css';
 
 export default function Sidebar({ isOpen, toggleSidebar}) {
@@ -13,7 +13,7 @@ export default function Sidebar({ isOpen, toggleSidebar}) {
                 <Hamburger toggleSidebar={toggleSidebar} />
             </div>
             <div className="flex align-center justify-center mr-4 ml-4">
-                <img src={logo} className="flex h-36 ml-4"/>
+                {/* <img src={logo} className="flex h-36 ml-4"/> */}
             </div>
             <nav className="mt-10">
                 <a href="/add-loan" className="block text-center py-2.5 px-4 my-5 rounded transition duration-200 hover:bg-sky-400 hover:text-white">

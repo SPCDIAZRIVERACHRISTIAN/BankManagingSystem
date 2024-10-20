@@ -67,6 +67,32 @@
     margin-left: 1rem; /* space-x-4 */
 }
 
+.navbar-item {
+    font-weight: 600; /* font-semibold */
+    color: #0284c7; /* text-sky-600 */
+    display: none; /* hidden */
+  }
+
+  @media (min-width: 768px) { /* md:block */
+    .navbar-item {
+      display: block;
+    }
+  }
+
+  .navbar-item {
+    margin-right: 1rem; /* mr-4 */
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    .md\\:block {
+      display: block;
+    }
+  }
+
 .logged-in {
     font-weight: 600; /* font-semibold */
     color: #0284c7; /* text-sky-600 */

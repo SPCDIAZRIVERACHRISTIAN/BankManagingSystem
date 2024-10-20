@@ -1,28 +1,36 @@
-import HeaderLogo from "./HeaderLogo";
 import Hamburger from "./Hamburger";
-import Sidebar from "./Sidebar";
-import { useState } from "react";
-import '../styles/Navigation.css';
+import Sidebar from "./SideBar";
+import { useState, useEffect } from "react";
+import HeaderLogo from "./HeaderLogo";
 
 export default function NavBar() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-    const name = localStorage.getItem('username');
+    const [username, setUsername] = useState('');
+
+    useEffect(() => {
+
+        const name = localStorage.getItem('username');
+        if (name) {
+            setUsername(name);
+        }
+    }, []);
+
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
     return (
         <>
-            <nav className="flex w-screen border-b-2 border-gray-300">
-                <div className="bg-white w-full flex flex-wrap items-center justify-between mx-auto">
+            <nav className="flex w-screen border-b-2 border-gray-300 ">
+                <div className="bg-sky-800 w-full flex flex-wrap items-center justify-between mx-auto">
                     <HeaderLogo />
                     <div className="flex items-center space-x-4 mr-5">
-                        {name ? (
-                            <p className="font-semibold text-sky-600 hidden md:block mr-4">Logged in as {name}</p>
+                        {username ? (
+                            <p className="font-semibold text-yellow-500 hidden md:block mr-4">Logged in as {username}</p>
                         ) : (
                             <p className="hidden md:block">Not showing</p>
                         )}
-                            <Hamburger toggleSidebar={toggleSidebar} />
+                        <Hamburger toggleSidebar={toggleSidebar} />
                     </div>
                 </div>
             </nav>

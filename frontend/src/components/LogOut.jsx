@@ -1,14 +1,14 @@
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../styles/LogOut.css'
 
 const LogoutButton = () => {
-    const history = useHistory();
+    const navigate = useNavigate();
 
     const handleLogout = () => {
         localStorage.removeItem('ACCESS_TOKEN');
         localStorage.removeItem('REFRESH_TOKEN');
 
-        history.push('/login');
+        navigate('/login');
     };
 
     return (
