@@ -19,16 +19,19 @@ The Bank Managing System is a software application designed to manage and handle
     cd BankManagingSystem
     ```
 3. use the requirements.txt to install all backend requirements in backend directory:
-    ```pip
-    install -r requirements.txt
+    ```sh
+    pip install -r requirements.txt
     ```
 4. install all packages on frontend directory using `npm install`:
-    ```npm
-    install
+    ```sh
+    npm install
     ```
 5. Open two terminals and for the backend run the server with `python3 manage.py runserver` and frontend with `npm run dev`:
-    ```python3 manage.py runserver
-    ```npm run dev
+    ```sh
+    python3 manage.py runserver
+    ```
+    ```sh
+    npm run dev
     ```
 6.Open link of the frontend terminal on prefered browser.
 
