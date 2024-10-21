@@ -8,7 +8,6 @@ export default function NavBar() {
     const [username, setUsername] = useState('');
 
     useEffect(() => {
-
         const name = localStorage.getItem('username');
         if (name) {
             setUsername(name);
@@ -19,6 +18,8 @@ export default function NavBar() {
         setIsSidebarOpen(!isSidebarOpen);
     };
 
+
+
     return (
         <>
             <nav className="flex w-screen border-b-2 border-gray-300 ">
@@ -26,7 +27,7 @@ export default function NavBar() {
                     <HeaderLogo />
                     <div className="flex items-center space-x-4 mr-5">
                         {username ? (
-                            <p className="font-semibold text-yellow-500 hidden md:block mr-4">Logged in as {username}</p>
+                            <p className="font-semibold text-yellow-500 hidden md:block mr-4">Welcome {username}!</p>
                         ) : (
                             <p className="hidden md:block">Not showing</p>
                         )}

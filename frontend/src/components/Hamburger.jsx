@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import '../styles/Navigation.css';
 
 export default function Hamburger({ toggleSidebar }) {
     return (

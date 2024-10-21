@@ -1,9 +1,10 @@
-import AddDebit from '../components/AddLoan';
+import AddDebit from '../components/AddDebit';
+import NavBar from '../components/NavBar';
 
 const AddDebitCardPage = () => {
     return (
         <div>
-            <h1>Add a New Loan</h1>
+            <NavBar />
             <AddDebit />
         </div>
     );

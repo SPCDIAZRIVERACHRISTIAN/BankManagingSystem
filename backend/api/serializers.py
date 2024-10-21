@@ -15,7 +15,7 @@ class UserSerializer(serializers.ModelSerializer):
 class DebitCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = DebitCard
-        fields = ["user", "card_number", "expiry_date", "cvv"]
+        fields = ["id", "user", "card_number", "expiry_date", "cvv"]
         extra_kwargs = {
             'cvv': {'write_only': True},
             'user': {'read_only': True}
@@ -29,7 +29,7 @@ class DebitCardSerializer(serializers.ModelSerializer):
 class CreditCardSerializer(serializers.ModelSerializer):
     class Meta:
         model = CreditCard
-        fields = ["user", "card_number", "expiry_date", "cvv"]
+        fields = ["id", "user", "card_number", "expiry_date", "cvv"]
         extra_kwargs = {
             'cvv': {'write_only': True},
             'user': {'read_only': True}
@@ -43,7 +43,7 @@ class CreditCardSerializer(serializers.ModelSerializer):
 class LoanSerializer(serializers.ModelSerializer):
     class Meta:
         model = Loan
-        fields = ["user", "amount", "interest_rate", "term"]
+        fields = ["id", "user", "amount", "interest_rate", "term"]
         extra_kwargs = {
             'user': {'read_only': True}
         }

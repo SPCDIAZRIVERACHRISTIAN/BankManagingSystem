@@ -1,9 +1,10 @@
 import AddLoan from '../components/AddLoan';
+import NavBar from '../components/NavBar';
 
 const AddLoanPage = () => {
     return (
         <div>
-            <h1>Add a New Loan</h1>
+            <NavBar />
             <AddLoan />
         </div>
     );

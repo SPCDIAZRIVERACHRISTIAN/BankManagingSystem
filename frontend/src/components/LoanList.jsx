@@ -25,18 +25,20 @@ const LoanList = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div>
-      <h1>Loans</h1>
-      <ul>
-        {loans.map((loan) => (
-          <li key={loan.id}>
-            <p>Amount: {loan.amount}</p>
-            <p>Interest Rate: {loan.interest_rate}</p>
-            <p>Term: {loan.term} months</p>
-            <p>Created At: {loan.created_at}</p>
-          </li>
-        ))}
-      </ul>
+    <div className="p-4 flex flex-col items-center">
+        <h1 className="text-xl font-bold mb-4 text-center">Loans</h1>
+        <ul className="grid gap-4 grid-cols-1">
+            {loans.map((loan) => (
+                <li
+                    key={loan.id}
+                    className="bg-white shadow-md rounded-lg p-6 w-full max-w-md"
+                >
+                    <p className="text-base font-medium">
+                        Amount: <span className="font-normal">${loan.amount}</span>
+                    </p>
+                </li>
+            ))}
+        </ul>
     </div>
   );
 };

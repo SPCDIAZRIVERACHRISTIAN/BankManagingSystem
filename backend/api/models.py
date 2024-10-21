@@ -7,6 +7,7 @@ User = get_user_model()
 
 class DebitCard(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    id = models.AutoField(primary_key=True)
     card_number = models.CharField(max_length=16, unique=True)
     expiry_date = models.DateField()
     cvv = models.CharField(max_length=3)

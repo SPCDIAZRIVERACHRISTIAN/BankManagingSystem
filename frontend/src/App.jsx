@@ -8,6 +8,9 @@ import AddCreditCardPage from "./pages/AddCreditCard"
 import AddDebitCardPage from "./pages/AddDebitCard"
 import AddLoanPage from "./pages/AddLoan"
 import PayLoans from "./pages/PayLoans"
+import EditCreditPage from "./pages/EditCredit"
+import EditDebitPage from "./pages/EditDebit"
+
 function Logout() {
   localStorage.clear()
   return <Navigate to="/login" />
@@ -37,6 +40,8 @@ function App() {
         <Route path="/add-credit" element={<AddCreditCardPage />}></Route>
         <Route path="/add-loan" element={<AddLoanPage />}></Route>
         <Route path="/pay-loan" element={<PayLoans />}></Route>
+        <Route path="/edit-credit/:id" element={<EditCreditPage />}></Route>
+        <Route path="/edit-debit/:id" element={<EditDebitPage />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
     </BrowserRouter>

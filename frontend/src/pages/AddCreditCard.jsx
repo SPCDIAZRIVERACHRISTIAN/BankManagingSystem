@@ -1,9 +1,10 @@
 import AddCredit from '../components/AddCredit';
+import NavBar from '../components/NavBar';
 
 const AddCreditCardPage = () => {
     return (
         <div>
-            <h1>Add a New Loan</h1>
+            <NavBar />
             <AddCredit />
         </div>
     );

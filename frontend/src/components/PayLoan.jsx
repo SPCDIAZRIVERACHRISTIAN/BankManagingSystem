@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import api from '../api'; // Adjust the import path as needed
-import '../styles/PayLoan.css'; // Import the CSS file
+import api from '../api';
+import NavBar from '../components/NavBar'
+import BackButton from './BackButton';
 
 const PayLoan = ({ loanId, currentAmount }) => {
   const [paymentAmount, setPaymentAmount] = useState('');
   const [message, setMessage] = useState('');
+  const username = localStorage.getItem('username');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +27,7 @@ const PayLoan = ({ loanId, currentAmount }) => {
 
   return (
     <div className="pay-loan">
+      <div><NavBar /></div>
       <h2>Pay Loan</h2>
       <form onSubmit={handleSubmit}>
         <div>
