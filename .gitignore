@@ -10,3 +10,5 @@ __pycache__/
 *$py.class
 todo.txt
 db.sqlite3
+.env
+db.json
