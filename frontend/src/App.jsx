@@ -39,7 +39,7 @@ function App() {
         <Route path="/add-debit" element={<AddDebitCardPage />}></Route>
         <Route path="/add-credit" element={<AddCreditCardPage />}></Route>
         <Route path="/add-loan" element={<AddLoanPage />}></Route>
-        <Route path="/pay-loan" element={<PayLoans />}></Route>
+        <Route path="/pay-loan/:id" element={<PayLoans />}></Route>
         <Route path="/edit-credit/:id" element={<EditCreditPage />}></Route>
         <Route path="/edit-debit/:id" element={<EditDebitPage />}></Route>
         <Route path="*" element={<NotFound />}></Route>
