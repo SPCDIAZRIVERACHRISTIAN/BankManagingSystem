@@ -1,20 +1,26 @@
+/**
+ * Profile settings
+ *
+ * its a form that lets the user edit any attribute it wants
+ * specifically username first and last name email and password.
+ * 
+ */
 import { useEffect, useState } from 'react';
 import api from '../api';
 import { useNavigate } from 'react-router-dom';
 
 const Profile = () => {
-  const [user, setUser] = useState(null); // Holds user data
-  const [isEditing, setIsEditing] = useState(false); // Toggle editing mode
-  const [formData, setFormData] = useState({}); // Holds form data
-  const navigate = useNavigate(); // For redirecting after deletion
+  const [user, setUser] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
+  const [formData, setFormData] = useState({});
+  const navigate = useNavigate();
 
-  // Fetch user profile data on component mount
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
         const response = await api.get('/api/userdata/');
         setUser(response.data);
-        setFormData(response.data); // Initialize form data with user info
+        setFormData(response.data);
       } catch (error) {
         console.error('Error fetching profile:', error);
       }
@@ -22,32 +28,29 @@ const Profile = () => {
     fetchUserProfile();
   }, []);
 
-  // Handle input changes for the form
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value }); // Update form data
+    setFormData({ ...formData, [name]: value });
   };
 
-  // Handle form submission to update the profile
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      await api.put('/api/userdata/', formData); // Send updated data
-      setUser(formData); // Update user data in local state
-      setIsEditing(false); // Exit editing mode
+      await api.put('/api/userdata/', formData);
+      setUser(formData);
+      setIsEditing(false);
     } catch (error) {
       console.error('Error updating profile:', error);
     }
   };
 
-  // Handle delete profile action with confirmation
   const handleDelete = async () => {
     const confirmed = window.confirm('Are you sure you want to delete your account?');
     if (confirmed) {
       try {
         await api.delete('/api/profile');
         alert('Account deleted successfully');
-        navigate('/login'); // Redirect after deletion
+        navigate('/login');
       } catch (error) {
         console.error('Error deleting profile:', error);
       }
@@ -62,7 +65,6 @@ const Profile = () => {
 
       {!isEditing ? (
         <>
-          {/* Display User Profile */}
           <p><strong>First Name:</strong> {user.first_name}</p>
           <p><strong>Last Name:</strong> {user.last_name}</p>
           <p><strong>Email:</strong> {user.email}</p>
@@ -85,7 +87,6 @@ const Profile = () => {
         </>
       ) : (
         <>
-          {/* Update Form */}
           <form onSubmit={handleUpdate}>
             <div className="mb-4">
               <label className="block text-gray-700 font-bold mb-2" htmlFor="first_name">

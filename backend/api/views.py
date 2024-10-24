@@ -12,6 +12,50 @@ from rest_framework.decorators import api_view, permission_classes
 from openai import OpenAI
 from django.conf import settings
 import logging
+"""
+This module contains views for the Bank Managing System API.
+
+Views:
+    chat_with_gpt(request):
+        Handles POST requests to interact with OpenAI's GPT-3.5-turbo model.
+        Requires an authenticated user.
+
+    CreateUserView(generics.CreateAPIView):
+        Handles user creation.
+        Allows any user to create an account.
+
+    UserDetailView(APIView):
+        Handles GET, PUT, and DELETE requests for user details.
+        Requires an authenticated user.
+
+    LoanListCreateView(generics.ListCreateAPIView):
+        Handles listing and creating loans.
+        Requires an authenticated user.
+
+    LoanDetailView(generics.RetrieveUpdateDestroyAPIView):
+        Handles retrieving, updating, and deleting a specific loan.
+        Requires an authenticated user.
+
+    CreditCardListCreateView(generics.ListCreateAPIView):
+        Handles listing and creating credit cards.
+        Requires an authenticated user.
+
+    CreditCardDetailView(generics.RetrieveUpdateDestroyAPIView):
+        Handles retrieving, updating, and deleting a specific credit card.
+        Requires an authenticated user.
+
+    DebitCardListCreateView(generics.ListCreateAPIView):
+        Handles listing and creating debit cards.
+        Requires an authenticated user.
+
+    DebitCardDetailView(generics.RetrieveUpdateDestroyAPIView):
+        Handles retrieving, updating, and deleting a specific debit card.
+        Requires an authenticated user.
+
+    RegisterView(APIView):
+        Handles user registration.
+        Allows any user to register.
+"""
 
 client = OpenAI(api_key=settings.OPENAI_API_KEY)
 

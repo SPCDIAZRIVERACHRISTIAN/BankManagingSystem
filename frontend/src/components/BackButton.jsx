@@ -1,3 +1,8 @@
+/**
+ * BackButton component
+ *
+ * component that navigates the user back to the home page.
+ */
 import { useNavigate } from "react-router-dom";
 
 const BackButton = () => {

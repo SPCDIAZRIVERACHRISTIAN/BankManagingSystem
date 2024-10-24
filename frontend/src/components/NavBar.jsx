@@ -1,3 +1,11 @@
+/**
+ * NavBar component
+ *
+ * displays a div with the logo hamburguer and the username of the
+ * user if for some reason the localstorage does not
+ * get the user it will display not showing
+ * uses hamburguer header logo and sidebar components
+ */
 import Hamburger from "./Hamburger";
 import Sidebar from "./SideBar";
 import { useState, useEffect } from "react";

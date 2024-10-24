@@ -1,3 +1,9 @@
+/**
+ * Debit Card List component
+ *
+ * makes a list of debit cards belonging to the user associated with the debit cards.
+ * uses delete component to delete a card.
+ */
 import { useEffect, useState } from 'react';
 import api from '../api';
 import { FaPencilAlt } from 'react-icons/fa';

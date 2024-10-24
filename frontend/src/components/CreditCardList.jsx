@@ -1,3 +1,9 @@
+/**
+ * Credit Card List component
+ *
+ * makes a list of credit cards belonging to the user associated with the credit cards.
+ * uses delete component to delete a card.
+ */
 import { useEffect, useState } from 'react';
 import api from '../api';
 import { FaPencilAlt } from 'react-icons/fa';

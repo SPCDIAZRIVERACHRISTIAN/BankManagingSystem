@@ -4,6 +4,22 @@ from rest_framework.test import APITestCase, APIClient
 from django.contrib.auth.models import User
 from .models import Loan, CreditCard, DebitCard
 from decimal import Decimal
+"""
+This module contains test cases for the Bank Managing System API, specifically for Loan, CreditCard, and DebitCard models.
+It uses Django's APITestCase and APIClient for testing the API endpoints.
+
+Classes:
+    LoanTests(APITestCase): Contains test cases for creating, retrieving, updating, and deleting Loan instances.
+    CreditCardTests(APITestCase): Contains test cases for creating, retrieving, updating, and deleting CreditCard instances.
+    DebitCardTests(APITestCase): Contains test cases for creating, retrieving, updating, and deleting DebitCard instances.
+
+Each test class includes:
+    - setUp: Initializes the test client and creates a test user.
+    - test_create_<model>: Tests the creation of a <model> instance.
+    - test_get_<model>s: Tests retrieving a list of <model> instances.
+    - test_update_<model>: Tests updating a <model> instance.
+    - test_delete_<model>: Tests deleting a <model> instance.
+"""
 
 class LoanTests(APITestCase):
     def setUp(self):

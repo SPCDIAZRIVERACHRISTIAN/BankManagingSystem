@@ -1,3 +1,9 @@
+/**
+ * Side BAr component
+ *
+ * the sidebar component holds links for pages that add loans credits
+ * and debit as well as the logout button and profile setting page
+ */
 import PropTypes from "prop-types";
 import Hamburger from "./Hamburger";
 import LogoutButton from "./LogOut";

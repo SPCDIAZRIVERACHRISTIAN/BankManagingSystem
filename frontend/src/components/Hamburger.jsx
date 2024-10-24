@@ -1,3 +1,9 @@
+/**
+ * hamburguer component
+ *
+ * its use is to hide the sidebar in a convenient place the user can
+ * spot quickly.
+ */
 import PropTypes from 'prop-types';
 
 export default function Hamburger({ toggleSidebar }) {

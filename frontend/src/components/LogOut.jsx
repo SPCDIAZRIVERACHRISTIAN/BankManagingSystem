@@ -1,3 +1,9 @@
+/**
+ * logout component
+ *
+ * Lets the user log out of the page when he needs
+ * to and removes all the items stored in local storage
+ */
 import { useNavigate } from 'react-router-dom';
 
 const LogoutButton = () => {

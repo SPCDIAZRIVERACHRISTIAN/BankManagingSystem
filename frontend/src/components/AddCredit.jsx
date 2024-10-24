@@ -1,3 +1,8 @@
+/**
+ * AddCredit component
+ *
+ * THis add credit allows the user to create a credit card and displays it on add credit card page.
+ */
 import { useState } from "react";
 import api from '../api';
 import BackButton from "./BackButton";

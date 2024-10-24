@@ -1,3 +1,10 @@
+/**
+ * Protected Routes
+ *
+ * THis function makes sure the user trying to access the home page is authenticated
+ * before entering the home page.
+ * if user is not authorized he will be navigated back to login.
+ */
 import { Navigate } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
 import api from "../api";

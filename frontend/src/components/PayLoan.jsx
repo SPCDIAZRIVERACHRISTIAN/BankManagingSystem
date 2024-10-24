@@ -1,3 +1,12 @@
+/**
+ * pay loan component
+ *
+ * this component is a form to pay of an amount of the loan
+ * the way it works is that it gets the amount owed
+ * then looks for the amount wanted to pay
+ * and finally substracts the payed amount and sends the new amount
+ * to the database
+ */
 import { useState, useEffect } from 'react';
 import api from '../api';
 import NavBar from './NavBar';
@@ -6,7 +15,7 @@ import { useParams } from 'react-router-dom';
 import { ACCESS_TOKEN } from '../constants';
 
 const PayLoan = () => {
-  const { id } = useParams(); // Get the loan ID from the URL parameters
+  const { id } = useParams();
   const [currentAmount, setCurrentAmount] = useState(0);
   const [paymentAmount, setPaymentAmount] = useState('');
   const [message, setMessage] = useState('');
@@ -48,7 +57,7 @@ const PayLoan = () => {
       });
       setMessage('Payment successful!');
       setPaymentAmount('');
-      setCurrentAmount(newAmount); // Update the current amount in the state
+      setCurrentAmount(newAmount);
     } catch (error) {
       setMessage('Failed to process payment.');
       console.error(error);
@@ -57,15 +66,10 @@ const PayLoan = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Navbar at the top */}
       <NavBar />
-
-      {/* Back button directly under the navbar */}
       <div className="mt-4 px-4">
         <BackButton />
       </div>
-
-      {/* Center the card horizontally and vertically */}
       <div className="flex items-center justify-center min-h-[calc(100vh-64px)]">
         <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
           <h2 className="text-2xl font-bold mb-6 text-center">Pay Loan</h2>

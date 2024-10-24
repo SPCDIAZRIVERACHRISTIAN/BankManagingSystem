@@ -1,3 +1,9 @@
+/**
+ * Form component
+ *
+ * the form component verifies if the method of the route is logging or Register
+ * to display two different forms depending on which method is being used.
+ */
 import { useState } from "react";
 import api from "../api";
 import { useNavigate } from "react-router-dom";

@@ -1,3 +1,8 @@
+/**
+ * home
+ *
+ * displays the home page for the user.
+ */
 import React, { useState, useEffect } from 'react';
 import LoanList from '../components/LoanList';
 import CreditCardList from "../components/CreditCardList";
@@ -7,11 +12,6 @@ import api from '../api';
 import ChatWindow from '../components/ChatWindow';
 
 function Home() {
-    // const [userData, setUserData] = useState({
-    //     username: '',
-    //     first_name: '',
-    //     last_name: ''
-    // });
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -26,11 +26,6 @@ function Home() {
                 localStorage.setItem('username', data.username);
                 localStorage.setItem('first_name', data.first_name);
                 localStorage.setItem('last_name', data.last_name);
-                // setUserData({
-                //     username: data.username,
-                //     first_name: data.first_name,
-                //     last_name: data.last_name
-                // });
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }

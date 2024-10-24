@@ -1,4 +1,5 @@
 from django.apps import AppConfig
+'''Runs the api backend app'''
 
 
 class ApiConfig(AppConfig):

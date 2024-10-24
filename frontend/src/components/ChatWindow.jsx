@@ -1,13 +1,20 @@
+
+/**
+ * ChatWindow Component
+ *
+ * This component renders a chat interface that allows users to send messages and receive responses.
+ *
+ */
 import { useState } from 'react';
 import api from '../api'
 import { ACCESS_TOKEN } from '../constants';
 
 const ChatWindow = () => {
-  const [isOpen, setIsOpen] = useState(false); // State to toggle chat window visibility
+  const [isOpen, setIsOpen] = useState(false);
   const [message, setMessage] = useState('');
   const [chatLog, setChatLog] = useState([]);
 
-  const toggleChat = () => setIsOpen(!isOpen); // Toggle the chat window
+  const toggleChat = () => setIsOpen(!isOpen);
 
   const handleSend = async () => {
     if (!message.trim()) return;
@@ -22,7 +29,7 @@ const ChatWindow = () => {
         {
           headers: {
             'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json', // Optional, but ensures JSON encoding
+            'Content-Type': 'application/json',
           },
         }
       );

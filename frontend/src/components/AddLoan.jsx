@@ -1,3 +1,9 @@
+/**
+ * Add loan
+ *
+ * Creates a loan in a page called add loan.
+ * uses other components to give it more functionality like backbutton and api.
+ */
 import { useState } from 'react';
 import api from '../api';
 import BackButton from './BackButton';

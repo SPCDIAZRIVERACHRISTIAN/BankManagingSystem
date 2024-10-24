@@ -1,3 +1,10 @@
+/**
+ * delete button component
+ *
+ * this button deletes specified item by first looking for
+ * the item description with type and id then it pops a message
+ * confirming the user is sure it wants to delete specified item.
+ */
 import api from '../api'; // Axios instance
 import { useState } from 'react';
 

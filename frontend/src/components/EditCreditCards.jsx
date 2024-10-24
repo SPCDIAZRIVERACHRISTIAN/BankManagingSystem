@@ -1,3 +1,11 @@
+/**
+ * edit credit card compoenent
+ *
+ * this component gives the user the ability to update the card information
+ * stored on the database.
+ *
+ * uses navbar for displaying a navbar on top of the page.
+ */
 import { useState, useEffect } from 'react';
 import api from '../api';
 import { useParams, useNavigate } from 'react-router-dom';

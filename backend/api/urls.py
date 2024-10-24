@@ -1,5 +1,28 @@
 from django.urls import path
 from . import views
+"""
+URL configuration for the Bank Managing System backend API.
+
+This module defines the URL patterns for the various views in the API, including
+user data, chat with GPT, credit cards, debit cards, and loans.
+
+Routes:
+    - 'userdata/': Endpoint for user detail view, handled by `UserDetailView`.
+    - 'chat/': Endpoint for chatting with GPT, handled by `chat_with_gpt`.
+    - 'credit-cards/': Endpoint for listing and creating credit cards, handled by `CreditCardListCreateView`.
+    - 'credit-cards/<int:pk>/': Endpoint for retrieving, updating, or deleting a specific credit card, handled by `CreditCardDetailView`.
+    - 'debit-cards/': Endpoint for listing and creating debit cards, handled by `DebitCardListCreateView`.
+    - 'debit-cards/<int:pk>/': Endpoint for retrieving, updating, or deleting a specific debit card, handled by `DebitCardDetailView`.
+    - 'loans/': Endpoint for listing and creating loans, handled by `LoanListCreateView`.
+    - 'loans/<int:pk>/': Endpoint for retrieving, updating, or deleting a specific loan, handled by `LoanDetailView`.
+
+Imports:
+    - `path` from `django.urls`: Function to define URL patterns.
+    - `views` from the current package: Module containing the view classes and functions.
+
+Attributes:
+    - `urlpatterns` (list): List of URL patterns for the API.
+"""
 
 urlpatterns = [
     path('userdata/', views.UserDetailView.as_view(), name='register'),

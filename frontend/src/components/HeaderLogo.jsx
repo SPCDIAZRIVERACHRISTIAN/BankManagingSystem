@@ -1,3 +1,9 @@
+/**
+ * header logo component
+ *
+ * displays the bank manager logo and double as a link to bring the user back to the home
+ * page if necesary.
+ */
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png"
 

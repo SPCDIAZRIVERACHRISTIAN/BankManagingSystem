@@ -1,3 +1,9 @@
+/**
+ * Add Debit
+ *
+ * Creates a debit card in a page called add debitcard.
+ * uses other components to give it more functionality like backbutton and api.
+ */
 import React, { useState } from 'react';
 import api from '../api';
 import BackButton from './BackButton';

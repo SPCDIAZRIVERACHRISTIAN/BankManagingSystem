@@ -1,5 +1,12 @@
+/**
+ * Loan list component
+ *
+ * creates a list of all the loans that are assigned
+ * to the user showing the amount he has to pay and a button for paying them
+ *
+ */
 import { useEffect, useState } from 'react';
-import api from '../api'; // Adjust the import path as needed
+import api from '../api';
 import { useNavigate } from 'react-router-dom';
 
 const LoanList = () => {
@@ -30,9 +37,6 @@ const LoanList = () => {
     navigate(`/pay-loan/${id}`);
   };
 
-  const handleDelete = (type, id) => {
-    setLoans(loans.filter((loan) => loan.id !== id));
-  };
 
   return (
     <div className="container mx-auto my-8">

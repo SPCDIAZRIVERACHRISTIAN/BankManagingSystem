@@ -1,3 +1,9 @@
+/**
+ * api
+ *
+ * stores acces and refresh token for convenience and
+ * manages the route to the backend by placing route by default
+ */
 import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
