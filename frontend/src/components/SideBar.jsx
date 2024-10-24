@@ -23,6 +23,9 @@ export default function Sidebar({ isOpen, toggleSidebar}) {
                 <a href="/add-credit" className="block text-center text-xl py-2.5 px-4 my-5 rounded transition duration-200 hover:bg-yellow-400 hover:text-white">
                     New Credit Card
                 </a>
+                <a href="/profile" className="block text-center text-xl py-2.5 px-4 my-5 rounded transition duration-200 hover:bg-yellow-400 hover:text-white">
+                    Profile
+                </a>
             </nav>
             <div className="absolute bottom-0 w-full flex align-center justify-center mb-24">
                 <LogoutButton />

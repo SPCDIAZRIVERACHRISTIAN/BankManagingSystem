@@ -1,13 +1,13 @@
 # Bank Managing System
 
 ## About
-The Bank Managing System is a software application designed to manage and handle various banking operations. It allows users to create accounts, deposit and withdraw money, transfer funds, and view account details. It is still on development.
+The Bank Managing System is a software application designed to manage and handle various banking operations. It allows users to create accounts, deposit and withdraw money, transfer funds, and view account details. It is meant to run on localhost.
 
 ## How to Run the Project
 
 ### Prerequisites
-- Ensure you have `gcc` installed on your system.
-- Ensure you have `make` installed on your system.
+- Ensure you have `python` installed on your systemwith the latest version.
+- Ensure you have `node` installed on your system with the latest version.
 
 ### Steps to Run
 1. Clone the repository:
@@ -35,10 +35,15 @@ The Bank Managing System is a software application designed to manage and handle
     ```
 6.Open link of the frontend terminal on prefered browser.
 
+### Tips
+You can use the mock user I have but i would suggest creating your own profile to see all that I made.
+- username: 11b_shrink
+- password: password
+
 ## Features
 - Account creation
-- Deposit and withdrawal
-- Fund transfer
+- Account CRUD manipulation
 - Account details view
+- Profile CRUD manipulation
 
 

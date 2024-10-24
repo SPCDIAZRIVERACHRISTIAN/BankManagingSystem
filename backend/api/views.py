@@ -7,6 +7,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from .models import DebitCard, CreditCard, Loan
 from .serializers import DebitCardSerializer, CreditCardSerializer, LoanSerializer, RegisterSerializer
+from django.contrib.auth.hashers import make_password
 
 
 class CreateUserView(generics.CreateAPIView):
@@ -35,9 +36,29 @@ class UserDetailView(APIView):
         data = {
             "username": user.username,
             "first_name": user.first_name,
-            "last_name": user.last_name
+            "last_name": user.last_name,
+            "email": user.email
         }
         return Response(data)
+
+    def put(self, request, *args, **kwargs):
+        user = request.user
+        data = request.data.copy()
+        if 'password' in data and data['password']:
+            data['password'] = make_password(data['password'])
+        serializer = UserSerializer(user, data=data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, *args, **kwargs):
+        user = request.user
+        Loan.objects.filter(user=user).delete()
+        DebitCard.objects.filter(user=user).delete()
+        CreditCard.objects.filter(user=user).delete()
+        user.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 class LoanListCreateView(generics.ListCreateAPIView):
     serializer_class = LoanSerializer
