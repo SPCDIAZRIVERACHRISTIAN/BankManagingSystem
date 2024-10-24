@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('userdata/', views.UserDetailView.as_view(), name='register'),
+    path('chat/', views.chat_with_gpt, name='chat_with_gpt'),
     path('credit-cards/', views.CreditCardListCreateView.as_view(), name='credit-card-list-create'),
     path('credit-cards/<int:pk>/', views.CreditCardDetailView.as_view(), name='credit-card-detail'),
     path('debit-cards/', views.DebitCardListCreateView.as_view(), name='debit-card-list-create'),

@@ -4,13 +4,14 @@ import CreditCardList from "../components/CreditCardList";
 import DebitCardList from '../components/DebitCardList';
 import NavBar from '../components/NavBar';
 import api from '../api';
+import ChatWindow from '../components/ChatWindow';
 
 function Home() {
-    const [userData, setUserData] = useState({
-        username: '',
-        first_name: '',
-        last_name: ''
-    });
+    // const [userData, setUserData] = useState({
+    //     username: '',
+    //     first_name: '',
+    //     last_name: ''
+    // });
 
     useEffect(() => {
         const fetchUserData = async () => {
@@ -50,6 +51,7 @@ function Home() {
     <div className="flex flex-col items-center w-full">
         <LoanList />
     </div>
+    <div><ChatWindow /></div>
 </div>
         </div>
     );

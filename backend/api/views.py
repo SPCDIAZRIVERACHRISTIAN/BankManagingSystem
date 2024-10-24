@@ -8,7 +8,33 @@ from rest_framework.response import Response
 from .models import DebitCard, CreditCard, Loan
 from .serializers import DebitCardSerializer, CreditCardSerializer, LoanSerializer, RegisterSerializer
 from django.contrib.auth.hashers import make_password
+from rest_framework.decorators import api_view, permission_classes
+from openai import OpenAI
+from django.conf import settings
+import logging
 
+client = OpenAI(api_key=settings.OPENAI_API_KEY)
+
+logger = logging.getLogger(__name__)
+
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def chat_with_gpt(request):
+    user_message = request.data.get('message')
+    print(f"OPENAI_API_KEY: {settings.OPENAI_API_KEY}")
+    print(request.headers)
+    if not user_message:
+        return Response({"error": "Message is required"}, status=400)
+
+    try:
+        response = client.chat.completions.create(model="gpt-3.5-turbo",
+        messages=[{"role": "user", "content": user_message}])
+        chat_response = response.choices[0].message.content
+        return Response({"response": chat_response})
+    except Exception as e:
+        logger.exception("ChatGPT request failed.")
+        return Response({"error": str(e)}, status=500)
 
 class CreateUserView(generics.CreateAPIView):
     queryset = User.objects.all()
